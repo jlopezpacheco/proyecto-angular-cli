@@ -1,9 +1,10 @@
 export class Game{
 
 	constructor(
-		nombre:string,
-		plataforma:string,
-		anyo_lanzamiento: number,
-		multiplayer:boolean
+		public nombre:string,
+		public desarrollador:string,
+		public plataforma:string,
+		public anyo_lanzamiento: number,
+		public multiplayer:boolean
 		){}
 }
