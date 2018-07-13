@@ -5,4 +5,13 @@ th{
 table{
 	font: 100% sans-serif;
 	text-align: center;
+	width: 100%;
+}
+
+img{
+	width: 100px;
+}
+
+caption{
+	font-weight: bold;
 }

@@ -1,84 +1,33 @@
+<div align="center">
+  <button (click)="cambiarLista('all')">ALL Games</button>
+  <button (click)="cambiarLista('ps4')">PS4 Games</button>
+  <button (click)="cambiarLista('xbox')">X-BOX Games</button>
+  <button (click)="cambiarLista('wii')">WII Games</button>
+</div>
+
+<br>
+
 <div *ngIf="mostrarListaJuegos === 'all'" align="center">
   <table border="1" align="center">
     <caption>ALL GAMES</caption>
     <tr>
+      <th>#</th>
+      <th>Caratula</th>
       <th>Nombre Juego</th>
       <th>Desarrollador/es</th>
       <th>Plataforma</th>
       <th>Año Lanzamiento</th>
       <th>Multiplayer</th>
     </tr>
-    <tr>
-      <td>{{gamesPs4[0].nombre}}</td>
-      <td>{{gamesPs4[0].desarrollador}}</td>
-      <td>{{gamesPs4[0].plataforma}}</td>
-      <td>{{gamesPs4[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesPs4[1].nombre}}</td>
-      <td>{{gamesPs4[1].desarrollador}}</td>
-      <td>{{gamesPs4[1].plataforma}}</td>
-      <td>{{gamesPs4[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesPs4[2].nombre}}</td>
-      <td>{{gamesPs4[2].desarrollador}}</td>
-      <td>{{gamesPs4[2].plataforma}}</td>
-      <td>{{gamesPs4[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[2].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesXbox[0].nombre}}</td>
-      <td>{{gamesXbox[0].desarrollador}}</td>
-      <td>{{gamesXbox[0].plataforma}}</td>
-      <td>{{gamesXbox[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesXbox[1].nombre}}</td>
-      <td>{{gamesXbox[1].desarrollador}}</td>
-      <td>{{gamesXbox[1].plataforma}}</td>
-      <td>{{gamesXbox[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesXbox[2].nombre}}</td>
-      <td>{{gamesXbox[2].desarrollador}}</td>
-      <td>{{gamesXbox[2].plataforma}}</td>
-      <td>{{gamesXbox[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[2].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesWii[0].nombre}}</td>
-      <td>{{gamesWii[0].desarrollador}}</td>
-      <td>{{gamesWii[0].plataforma}}</td>
-      <td>{{gamesWii[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesWii[1].nombre}}</td>
-      <td>{{gamesWii[1].desarrollador}}</td>
-      <td>{{gamesWii[1].plataforma}}</td>
-      <td>{{gamesWii[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesWii[2].nombre}}</td>
-      <td>{{gamesWii[2].desarrollador}}</td>
-      <td>{{gamesWii[2].plataforma}}</td>
-      <td>{{gamesWii[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[2].multiplayer === false">No</td>
+    <tr *ngFor = "let games of gamesAll; let i = index">
+      <td>{{i+1}}</td>
+      <td><img src="{{games.caratula}}"></td>
+      <td>{{games.nombre}}</td>
+      <td>{{games.desarrollador}}</td>
+      <td>{{games.plataforma}}</td>
+      <td>{{games.anyo_lanzamiento}}</td>
+      <td *ngIf="games.multiplayer === true">Si</td>
+      <td *ngIf="games.multiplayer === false">No</td>
     </tr>
   </table>
 </div>
@@ -87,35 +36,23 @@
   <table border="1" align="center">
     <caption>PS4 GAMES</caption>
     <tr>
+      <th>#</th>
+      <th>Caratula</th>
       <th>Nombre Juego</th>
       <th>Desarrollador/es</th>
       <th>Plataforma</th>
       <th>Año Lanzamiento</th>
       <th>Multiplayer</th>
     </tr>
-    <tr>
-      <td>{{gamesPs4[0].nombre}}</td>
-      <td>{{gamesPs4[0].desarrollador}}</td>
-      <td>{{gamesPs4[0].plataforma}}</td>
-      <td>{{gamesPs4[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesPs4[1].nombre}}</td>
-      <td>{{gamesPs4[1].desarrollador}}</td>
-      <td>{{gamesPs4[1].plataforma}}</td>
-      <td>{{gamesPs4[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesPs4[2].nombre}}</td>
-      <td>{{gamesPs4[2].desarrollador}}</td>
-      <td>{{gamesPs4[2].plataforma}}</td>
-      <td>{{gamesPs4[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesPs4[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesPs4[2].multiplayer === false">No</td>
+    <tr *ngFor = "let games of gamesPs4; let i = index">
+      <td>{{i+1}}</td>
+      <td><img src="{{games.caratula}}"></td>
+      <td>{{games.nombre}}</td>
+      <td>{{games.desarrollador}}</td>
+      <td>{{games.plataforma}}</td>
+      <td>{{games.anyo_lanzamiento}}</td>
+      <td *ngIf="games.multiplayer === true">Si</td>
+      <td *ngIf="games.multiplayer === false">No</td>
     </tr>
   </table>
 </div>
@@ -124,35 +61,23 @@
   <table border="1" align="center">
     <caption>X-BOX GAMES</caption>
     <tr>
+      <th>#</th>
+      <th>Caratula</th>
       <th>Nombre Juego</th>
       <th>Desarrollador/es</th>
       <th>Plataforma</th>
       <th>Año Lanzamiento</th>
       <th>Multiplayer</th>
     </tr>
-    <tr>
-      <td>{{gamesXbox[0].nombre}}</td>
-      <td>{{gamesXbox[0].desarrollador}}</td>
-      <td>{{gamesXbox[0].plataforma}}</td>
-      <td>{{gamesXbox[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesXbox[1].nombre}}</td>
-      <td>{{gamesXbox[1].desarrollador}}</td>
-      <td>{{gamesXbox[1].plataforma}}</td>
-      <td>{{gamesXbox[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesXbox[2].nombre}}</td>
-      <td>{{gamesXbox[2].desarrollador}}</td>
-      <td>{{gamesXbox[2].plataforma}}</td>
-      <td>{{gamesXbox[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesXbox[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesXbox[2].multiplayer === false">No</td>
+    <tr *ngFor = "let games of gamesXbox; let i = index">
+      <td>{{i+1}}</td>
+      <td><img src="{{games.caratula}}"></td>
+      <td>{{games.nombre}}</td>
+      <td>{{games.desarrollador}}</td>
+      <td>{{games.plataforma}}</td>
+      <td>{{games.anyo_lanzamiento}}</td>
+      <td *ngIf="games.multiplayer === true">Si</td>
+      <td *ngIf="games.multiplayer === false">No</td>
     </tr>
   </table>
 </div>
@@ -161,42 +86,23 @@
   <table border="1" align="center">
     <caption>WII GAMES</caption>
     <tr>
+      <th>#</th>
+      <th>Caratula</th>
       <th>Nombre Juego</th>
       <th>Desarrollador/es</th>
       <th>Plataforma</th>
       <th>Año Lanzamiento</th>
       <th>Multiplayer</th>
     </tr>
-    <tr>
-      <td>{{gamesWii[0].nombre}}</td>
-      <td>{{gamesWii[0].desarrollador}}</td>
-      <td>{{gamesWii[0].plataforma}}</td>
-      <td>{{gamesWii[0].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[0].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[0].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesWii[1].nombre}}</td>
-      <td>{{gamesWii[1].desarrollador}}</td>
-      <td>{{gamesWii[1].plataforma}}</td>
-      <td>{{gamesWii[1].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[1].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[1].multiplayer === false">No</td>
-    </tr>
-    <tr>
-      <td>{{gamesWii[2].nombre}}</td>
-      <td>{{gamesWii[2].desarrollador}}</td>
-      <td>{{gamesWii[2].plataforma}}</td>
-      <td>{{gamesWii[2].anyo_lanzamiento}}</td>
-      <td *ngIf="gamesWii[2].multiplayer === true">Si</td>
-      <td *ngIf="gamesWii[2].multiplayer === false">No</td>
+    <tr *ngFor = "let games of gamesWii; let i = index">
+      <td>{{i+1}}</td>
+      <td><img src="{{games.caratula}}"></td>
+      <td>{{games.nombre}}</td>
+      <td>{{games.desarrollador}}</td>
+      <td>{{games.plataforma}}</td>
+      <td>{{games.anyo_lanzamiento}}</td>
+      <td *ngIf="games.multiplayer === true">Si</td>
+      <td *ngIf="games.multiplayer === false">No</td>
     </tr>
   </table>
-</div>
-<br>
-<div align="center">
-  <button (click)="cambiarLista('all')">ALL Games</button>
-  <button (click)="cambiarLista('ps4')">PS4 Games</button>
-  <button (click)="cambiarLista('xbox')">X-BOX Games</button>
-  <button (click)="cambiarLista('wii')">WII Games</button>
 </div>
