@@ -1,3 +1,7 @@
+body{
+	font: 100% sans-serif;
+}
+
 th{
 	background-color: #CDCCFF;
 }
@@ -12,6 +16,7 @@ img{
 	width: 100px;
 }
 
-caption{
+form{
+	font: 100% sans-serif;
 	font-weight: bold;
 }

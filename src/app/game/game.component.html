@@ -1,15 +1,17 @@
 <div align="center">
-  <button (click)="cambiarLista('all')">ALL Games</button>
-  <button (click)="cambiarLista('ps4')">PS4 Games</button>
-  <button (click)="cambiarLista('xbox')">X-BOX Games</button>
-  <button (click)="cambiarLista('wii')">WII Games</button>
+  <form>
+    <input (click)="cambiarLista('all')" type="radio" name="logo" value="all" checked> ALL Games
+    <input (click)="cambiarLista('ps4')" type="radio" name="logo" value="ps4"> PS4 Games
+    <input (click)="cambiarLista('xbox')" type="radio" name="logo" value="xbox"> XBOX Games
+    <input (click)="cambiarLista('wii')" type="radio" name="logo" value="wii"> WII Games 
+  </form> 
 </div>
 
 <br>
 
 <div *ngIf="mostrarListaJuegos === 'all'" align="center">
+  <img width="100" alt="Games Logo" src="https://pbs.twimg.com/profile_images/535808712162566144/FUjktX4E_400x400.png">
   <table border="1" align="center">
-    <caption>ALL GAMES</caption>
     <tr>
       <th>#</th>
       <th>Caratula</th>
@@ -33,8 +35,8 @@
 </div>
 
 <div *ngIf="mostrarListaJuegos === 'ps4'" align="center">
+  <img width="100" alt="Games Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_logo.svg/1200px-PlayStation_logo.svg.png">
   <table border="1" align="center">
-    <caption>PS4 GAMES</caption>
     <tr>
       <th>#</th>
       <th>Caratula</th>
@@ -58,8 +60,8 @@
 </div>
 
 <div *ngIf="mostrarListaJuegos === 'xbox'" align="center">
+  <img width="100" alt="Games Logo" src="https://cdn.worldvectorlogo.com/logos/xbox.svg">
   <table border="1" align="center">
-    <caption>X-BOX GAMES</caption>
     <tr>
       <th>#</th>
       <th>Caratula</th>
@@ -83,8 +85,8 @@
 </div>
 
 <div *ngIf="mostrarListaJuegos === 'wii'" align="center">
+  <img width="100" alt="Games Logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Wii_logo.png">
   <table border="1" align="center">
-    <caption>WII GAMES</caption>
     <tr>
       <th>#</th>
       <th>Caratula</th>
